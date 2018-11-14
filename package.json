@@ -23,6 +23,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
+    "body-parser": "^1.18.3",
     "browserify": "^15.2.0",
     "bulma": "^0.6.2",
     "express": "^4.16.2",
