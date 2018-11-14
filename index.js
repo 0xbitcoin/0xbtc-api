@@ -12,7 +12,7 @@ function init()
 
   var expressServer = new ExpressServer();
 
-  //every 60 seconds, update the Mongo data using Infura
+  //every 60 seconds, update the data using Infura
 
 
   setInterval(function(){
