@@ -4,6 +4,7 @@
   "description": "An API for getting JSON data about 0xBTC token on Ethereum ",
   "main": "index.js",
   "scripts": {
+    "bot": "node index.js",
     "webpack": "webpack",
     "dev": "webpack-dev-server ",
     "express": "node express-dev.js"
@@ -31,7 +32,6 @@
     "js-sha3": "^0.7.0",
     "owl.carousel": "^2.2.0",
     "sha3": "^1.2.0",
-
     "vue": "^2.5.13",
     "web3": "^0.14.0",
     "web3-utils": "^1.0.0-beta.36",
