@@ -34,7 +34,7 @@
     "owl.carousel": "^2.2.0",
     "sha3": "^1.2.0",
     "vue": "^2.5.13",
-    "web3": "^0.14.0",
+    "web3": "^1.0.0-beta.36",
     "web3-utils": "^1.0.0-beta.36",
     "webpack": "^3.10.0",
     "worker-loader": "^1.1.0"
