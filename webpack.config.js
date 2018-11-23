@@ -1,6 +1,10 @@
 var webpack = require('webpack');
 var path = require('path');
 
+
+
+
+
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
@@ -25,55 +29,36 @@ let cleanOptions = {
 }
 
 
-var extractPlugin = new ExtractTextPlugin({
-   filename: 'assets/main.[hash].css'
-});
-
 
 var webpackPlugins = [
-  new CleanWebpackPlugin(pathsToClean, cleanOptions),
-    extractPlugin,
+//  new CleanWebpackPlugin(pathsToClean, cleanOptions),
+
     new webpack.DefinePlugin({
         'process.env': {
           NODE_ENV: '"production"'
         }
       }),
 
-      new CopyWebpackPlugin([
-            {from:'app/assets/img',to:'app/assets/img'  }
-        ])
+        new CopyWebpackPlugin([
+          {from:'assets/img',to:'assets/img'  }
+          ], {
+            concurrency: 1
+          })
+
+
 ]
 
 
 
 const routesData = {
-  routes: [
-    {url: '/', title: '0xBitcoin', template: 'app/index.html', filename: 'index.html'},
-    {url: '/index-ru', title: '0xBitcoin', template: 'app/index-ru.html', filename: 'index-ru.html'},
-    {url: '/index-cn', title: '0xBitcoin', template: 'app/index-cn.html', filename: 'index-cn.html'},
-    {url: '/', title: '0xBitcoin', template: 'app/index.html', filename: 'index.html'},
-
-    {url: '/wallet', title: 'Wallet', template: 'app/wallet.html', filename: 'wallet/index.html'},
-  ]
+  routes: [   ]
 }
 
-
-routesData.routes.forEach(function(element){
-
-  var htmlPlugin = new HtmlWebpackPlugin({
-        title: element.title,
-        filename: element.filename,
-        template: element.template
-  });
-
- webpackPlugins.push(htmlPlugin)
-
-})
 
 
 
 module.exports = {
-    entry: ['./app/assets/javascripts/index', './app/assets/stylesheets/application.scss' ],
+    entry: ['./assets/javascripts/index.js' ],
     output: {
         path: path.resolve(__dirname, 'public'),
       //  filename: 'bundle.js',
@@ -93,12 +78,7 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /\.scss$/,
-                use: extractPlugin.extract({
-                    use: ['css-loader', 'sass-loader']
-                })
-            },
+           
             {
               test: /\.(png|jpg|gif)$/,
               use: [
