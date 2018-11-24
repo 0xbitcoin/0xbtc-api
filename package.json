@@ -7,7 +7,8 @@
     "bot": "node index.js",
     "webpack": "webpack",
     "dev": "webpack-dev-server ",
-    "express": "node express-dev.js"
+    "express": "node express-dev.js",
+    "geth-light": "geth --syncmode='light' --rpc"
   },
   "keywords": [
     "ethereum",
