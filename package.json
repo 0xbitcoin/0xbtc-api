@@ -8,7 +8,8 @@
     "webpack": "webpack",
     "dev": "webpack-dev-server ",
     "express": "node express-dev.js",
-    "geth-light": "geth --syncmode='light' --rpc"
+    "geth-light": "geth --syncmode='light' --rpc",
+    "copy-images": "node  scripts/copy-images.js"
   },
   "keywords": [
     "ethereum",
@@ -33,6 +34,7 @@
     "html-loader": "^0.5.5",
     "jquery": "^3.3.1",
     "js-sha3": "^0.7.0",
+    "ncp": "^2.0.0",
     "node-fetch": "^2.3.0",
     "owl.carousel": "^2.2.0",
     "redis": "^2.8.0",
