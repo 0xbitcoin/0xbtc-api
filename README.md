@@ -20,6 +20,9 @@ npm install
 npm run bot
 
 
+## punk images at
+/img/punk001.png
+
 
 ## Geth Light Peers  
 https://gist.github.com/rfikki/e2a8c47f4460668557b1e3ec8bae9c11
