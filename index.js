@@ -5,6 +5,7 @@ var ExpressServer = require ('./lib/express-server')
 
 //var mongoInterface = require('./lib/mongo-interface')
 
+
 function init()
 {
   console.log('Booting 0xBTC API bot.')
@@ -13,11 +14,14 @@ function init()
   //every 60 seconds, update the data using Infura
 
 
-  setInterval(function(){
 
-    var web3 = new EthHelper();
+     //run immediately
+     var web3 = new EthHelper();
 
-    var expressServer = new ExpressServer();
+     var expressServer = new ExpressServer();
+
+
+  setInterval(function(){ 
 
 
         EthHelper.connectToContract(web3 ,async function(data){
@@ -27,11 +31,6 @@ function init()
    }, 60*1000);
 
 
-
-   //run immediately
-   var web3 = new EthHelper();
-
-   var expressServer = new ExpressServer();
 
    EthHelper.connectToContract(web3 ,async function(data){
      expressServer.updateTokenData(data)
