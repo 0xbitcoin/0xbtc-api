@@ -17,7 +17,7 @@ function init()
   console.log('Booting 0xBTC API bot.')
 
 
-  var web3Plug = new Web3Plug();
+  var web3Plug = new Web3Plug(botconfig.web3provider);
 
   var mongoInterface = new MongoInterface()
   mongoInterface.init('api-0xbtc', botconfig.mongoConfig)
