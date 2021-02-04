@@ -1,26 +1,31 @@
 
 var ExpressServer = require ('./lib/express-server')
-var EthHelper = require('./lib/ethhelper')
+var EthConnection = require('./lib/ethconnection')
 
-var CoinManager = require ('./lib/coin-manager')
-var PunkManager = require ('./lib/punk-manager')
+const botconfig = require('../bot.config.json')
 
-//var mongoInterface = require('./lib/mongo-interface')
+
+//var CoinManager = require ('./lib/coin-manager')
+//var PunkManager = require ('./lib/punk-manager')
+
+ var mongoInterface = require('./lib/mongo-interface')
 
 function init()
 {
   console.log('Booting 0xBTC API bot.')
 
 
-  var web3 = new EthHelper();
+  var ethConnection = new EthConnection();
+
+  mongoInterface.init('api-0xbtc', botconfig.mongoConfig)
 
   //var expressServer = new ExpressServer();
 
 
-  CoinManager.init( web3 );
-  PunkManager.init( web3  );
+  //CoinManager.init( ethConnection );
+  //PunkManager.init( ethConnection  );
 
-  var expressServer = new ExpressServer(CoinManager, PunkManager);
+  var expressServer = new ExpressServer( );
 
 
 
