@@ -40,11 +40,17 @@ describe('web3api',  () => {
             
             console.log(zxbtcToken.getContract())
 
-            let difficulty = await zxbtcToken.getContract().methods.getMiningDifficulty().call()
+            let difficulty = await zxbtcToken.getMiningDifficulty()
                console.log('difficulty',difficulty)
+
+               let mints = await zxbtcToken.getMintHistory('11000000')
+               console.log('mints',mints)
         
                 assert.equal(parseInt(difficulty), 1519206521);
-            }); 
+
+
+
+         }); 
 
 
 
