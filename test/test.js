@@ -30,21 +30,24 @@ describe('web3api',  () => {
 
             let networkId = await web3Plug.getNetworkId()
 
+            let blockNumber = await web3Plug.getBlockNumber()
+
             console.log('networkId',networkId) 
+            console.log('blockNumber',blockNumber) 
+
 
             let zxbtcContractAddress = web3Plug.getContractDataForNetworkID(networkId)._0xbitcointoken.address
 
             console.log('zxbtcContractAddress',zxbtcContractAddress)
 
             var zxbtcToken = new EIP918Token(web3, zxbtcContractAddress)
-            
-            console.log(zxbtcToken.getContract())
+             
 
             let difficulty = await zxbtcToken.getMiningDifficulty()
                console.log('difficulty',difficulty)
 
                let mints = await zxbtcToken.getMintHistory('11000000')
-               console.log('mints',mints)
+               console.log('mints',mints.length)
         
                 assert.equal(parseInt(difficulty), 1519206521);
 
