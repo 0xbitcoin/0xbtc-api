@@ -2,7 +2,7 @@
 const MongoInterface =  require('./lib/mongo-interface')
 
 var ExpressServer = require ('./lib/express-server')
-var EthConnection = require('./lib/ethconnection')
+var Web3Plug = require('./lib/web3plug')
 
 const botconfig = require('./bot.config.json')
 
@@ -17,7 +17,7 @@ function init()
   console.log('Booting 0xBTC API bot.')
 
 
-  var ethConnection = new EthConnection();
+  var web3Plug = new Web3Plug();
 
   var mongoInterface = new MongoInterface()
   mongoInterface.init('api-0xbtc', botconfig.mongoConfig)
