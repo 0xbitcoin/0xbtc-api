@@ -1,14 +1,16 @@
 
+const MongoInterface =  require('./lib/mongo-interface')
+
 var ExpressServer = require ('./lib/express-server')
 var EthConnection = require('./lib/ethconnection')
 
-const botconfig = require('../bot.config.json')
+const botconfig = require('./bot.config.json')
 
 
 //var CoinManager = require ('./lib/coin-manager')
 //var PunkManager = require ('./lib/punk-manager')
 
- var mongoInterface = require('./lib/mongo-interface')
+
 
 function init()
 {
@@ -17,6 +19,7 @@ function init()
 
   var ethConnection = new EthConnection();
 
+  var mongoInterface = new MongoInterface()
   mongoInterface.init('api-0xbtc', botconfig.mongoConfig)
 
   //var expressServer = new ExpressServer();

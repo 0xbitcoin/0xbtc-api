@@ -1,6 +1,6 @@
 {   
  
-    "web3provider":"http://localhost:8545",
+    "web3provider":"http://localhost:9545",
     "mongoConfig":{
         "url":"localhost",
         "port":"27017"
