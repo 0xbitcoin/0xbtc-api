@@ -7,6 +7,14 @@ http://api.0xbtc.io/
 
 
 
+### TODO
+Add lib p2p which helps other clients mirror data 
+
+Add 'router' servers which are only responsible for curing lists of p2p-api servers  (or allow configure of a primary and fallbacks)
+
+
+
+
 ### BASIC SETUP (needs Node8)
 
 (install Node8)
