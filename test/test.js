@@ -1,8 +1,8 @@
 
-import Web3Plug from '../lib/js/web3plug' 
-import EIP918Token from '../lib/js/eip918token' 
+const Web3Plug = require('../lib/js/web3plug') 
+const EIP918Token = require('../lib/js/eip918token') 
 
-import chai from 'chai';
+const chai = require('chai')
 
 chai.config.includeStack = true;
 chai.use(require('chai-as-promised'))
