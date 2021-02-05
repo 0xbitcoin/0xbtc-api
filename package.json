@@ -8,7 +8,8 @@
     "webpack": "webpack",
     "dev": "webpack-dev-server ",
     "express": "node express-dev.js",
-    "geth-light": "geth --syncmode='light' --rpc",
+    "collectmints": "node jobs/collectmints",
+    "collectbasicdata": "node jobs/collectbasicdata",
     "copy-images": "node  scripts/copy-images.js",
     "mocha": "mocha   --timeout 60000 --reporter list"
   },
