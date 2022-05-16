@@ -35,7 +35,7 @@
     "js-sha3": "^0.7.0",
     "mongodb": "^3.6.4",
     "ncp": "^2.0.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "owl.carousel": "^2.2.0",
     "redis": "^2.8.0",
     "sha3": "^1.2.0",
